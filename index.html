@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			p {
+				font-size: 20px;
+				margin: 20px;
+			}
+			
+			div {
+				width: 100px;
+				height: 100px;
+				border: 2px solid #000;
+				margin: 20px;
+				text-align: center;
+				line-height: 100px;
+				font-size: 20px;
+				color: #fff;
+			}
+			
+			#pause {
+				background-color: red;
+			}
+			
+			#regain {
+				background-color: blue;
+			}
+			
+			#over {
+				background-color: yellow;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p>时间还有：<span id="shijian">0:00:00</span></p>
+		<div id="pause">暂停</div>
+		<div id="regain">恢复</div>
+		<div id="over">结束</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var Time;
+	function test(name) {
+		var Time = setInterval(function() {
+			var date = new Date();
+			var year = date.getFullYear(),
+				month = date.getMonth() + 1,
+				day = date.getDate(),
+				hour = date.getHours(),
+				minu = date.getMinutes(),
+				sec = date.getSeconds();
+			shijian.innerHTML = ((23 - hour) + ':' + (59 - minu) + ':' + (59 - sec));
+		}, 1000)
+
+		//暂停
+		pause.onclick = function() {
+			clearInterval(Time);
+		}
+
+		//恢复
+		regain.onclick = function() {
+			setInterval(test(name), 1000)
+		}
+
+		//结束
+		over.onclick = function() {
+			clearInterval(Time);
+			shjian.innerHTML = null;
+		}
+	}
+
+	test();
+</script>

@@ -1,0 +1,71 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title>
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+body{text-align: center;line-height: 100vh;font-size: 80px;}
+
+
+    </style> 
+</head>
+<body>
+<script type="text/javascript">
+	var students = [
+		
+	];
+//Vue / React / Jquery / Angular ／bs
+
+//Vue              20       o
+//React			   1        x
+//Jquery		   1        x
+//Angular          0        x
+//bootstrap        14       x
+/*
+
+1.组长：李姜波
+原瑶瑶 任晓坤 朱凯 吕霖霖 朱晓斌
+2.组长：郭梦雨
+刘肖飞 李锐 朱贺武 张红玉 张宇
+3.组长：延倩帆
+黄健聪 任宇航 孙玉栋 柳雨珍 孙丽
+4.组长：王钰斌
+王宏 石涛 杨燕倩 胡雪雪 武季林 范鑫
+5.组长：郑隆乾
+王立男 宁桐玉 梁程英 孙晓凯 靳凯凯
+6.组长：李晋飞
+刘太明 刘冲 谢德智 胡军客 石桂芳
+*/
+
+
+
+function random(min,max){
+	return parseInt(Math.random()*(++max-min))+min;
+};
+
+//console.log();
+var t = null;
+t = setInterval(()=>{
+	document.body.innerHTML = students[random(0,students.length-1)]
+},3e1);
+
+onclick = x =>{
+	clearInterval(t);
+	document.body.style.transition = '0.7s';
+	document.body.style.color = 'red';
+	document.body.style.textShadow ='0 0 5px rgb('+random(0,255)+','+random(0,255)+','+random(0,255)+')';
+	document.body.style.transform='scale(2)';
+};
+
+
+
+
+	//console.log(parseInt(Math.random()*3)+2)
+	//console.log(parseInt(Math.random()*6))//
+	//2-4
+
+
+</script>
+</body>
+</html>
